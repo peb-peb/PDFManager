@@ -8,6 +8,11 @@ def main(page: Page):
 
   BG = '0xffe9a178'
   FG = '0xfff6e1C3'
+  BUTTON_COLOR = '0xffA84448'
+
+  def shrink(e):
+    page2.controls[0].width = 120
+    page2.update()
 
   main_page_contents = Container(
     content=Column(
@@ -16,7 +21,8 @@ def main(page: Page):
           alignment='spaceBetween',
           controls=[
             Container(
-              content=Icon(icons.MENU)
+              content=Icon(icons.MENU),
+              on_click=lambda e: shrink(e),
             ),
             # REMOVED: for Account (but no requirement for login)
             # Row(
@@ -32,7 +38,36 @@ def main(page: Page):
         Text(
           value="Welcome to OpenPDFManager!"
         ),
-        
+        Text(
+          value="FEATURES"
+        ),
+        Stack(
+          controls=[
+            FilledTonalButton(
+              text='TRIM PDFs',
+              height=50,
+              width=300,
+              style=ButtonStyle(
+                bgcolor=BUTTON_COLOR,
+              ),
+              # on_click=page.go('/trim')
+            ),
+            # Container(
+            #   height=50, 
+            #   width=300, 
+            #   bgcolor=BG,
+            #   border_radius=20,
+            #   content=Column(
+            #     controls=[
+            #       Text(
+            #         value="TRIM",
+            #         text_align='CENTRE',
+            #       )
+            #     ]
+            #   )
+            # ),
+          ]
+        ),
       ]
     )
   )
@@ -69,7 +104,46 @@ def main(page: Page):
     )
   )
 
+  # get_file_contents = Container(
+  #   content=Column(
+  #     controls=[
+  #       Row(
+  #         alignment='spaceBetween',
+  #         controls=[
+  #           Container(
+  #             content=Icon(icons.MENU)
+  #           ),
+  #         ]
+  #       ),
+  #     ]
+  #   )
+  # )
+
+  all_pages = {
+    '/': View(
+      '/',
+      [
+        container
+      ]
+    ),
+    # '/trim': View(
+    #   '/trim',
+    #   [
+    #     # get_file_contents,
+    #   ]
+    # )
+  }
+
+  def route_change(route):
+    page.views.clear()
+    page.views.append(
+      all_pages[page.route]
+    )
+
   page.add(container)
+
+  page.on_route_change = route_change
+  page.go(page.route)
     
 
 app(target=main, assets_dir="assets", upload_dir="assets/uploads")
