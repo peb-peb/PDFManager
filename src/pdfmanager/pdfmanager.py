@@ -1,7 +1,5 @@
 from flet import *
 import PyPDF2
-import os
-
 
 
 def main(page: Page):
