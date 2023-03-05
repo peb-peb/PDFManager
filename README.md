@@ -25,30 +25,65 @@ Built with ❤️ at [**FOSSHack 3.0**](https://fossunited.org/fosshack/2023)!
 
 ## Goals
 
-
+- The goal of the project is to create a **PDFManager** which supports all the operations performed a PDF into a nice GUI.
+- The **PDFManager** is an oofline toolkit for all your PDF related issues.
+- The goal is to also make a cross-platform application.
 
 ## Features
 
+The **OpenPDFManager** currently supports the following features:
 
+- Merge two PDFs
+- Offline Support
+
+Features to implement/come in future:
+
+- Split PDF
+- Trim PDF
+- Encrypt PDF
+- Decrypt PDF (Brute Force and Other Techniques)
+- Rotate Pages of a PDF
+- Select and Merge Feature
+- Preview before download Feature
+
+The **`OpenPDFManager`** is developed in Python using `flet` (a relatively new GUI library for python). This would serve as a personal project and a guide for any new flet learners. 
 
 ### Installation
 
 **Prerequisites:**
 
-- []
+- `python` must be installed on your system. To install it, refer [this](https://www.python.org/downloads/)
+- `git` should also be present. Refer [this](https://git-scm.com/downloads)
+- That's all you need!!! 😉
 
-```sh
+Now, go into your terminal and run the following commands step-by-step:
 
+1. Clone the Reposistory
+
+```
+git clone git@github.com:peb-peb/PDFManager.git
+```
+
+2. Install all the external libraries using
+
+```
+pip install -r requirements.txt
+```
+
+3. Run the **`OpenPDFManager`**
+
+```
+flet src\pdfmanager\pdfmanager.py
 ```
 
 ## Contribution
 
 Contributions are always welcomed 🤗.
-Refer <a href="">CONTRIBUTING</a> for more info.
+Refer <a href="https://github.com/peb-peb/PDFManager/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> for more info.
 
 ## License
 
-Licensed under the MIT License, see <a href="">LICENSE</a> for more information.
+Licensed under the MIT License, see <a href="https://github.com/peb-peb/PDFManager/blob/main/LICENSE">LICENSE</a> for more information.
 
 ## Acknowledgements
 
@@ -63,10 +98,10 @@ Resources refered during FOSS Hack 3.0 -
 
 Q. What was the idea for the project?
 
-> 
+> I frequently required to perform many operations on PDF due to my College Assignments.
 
 Q. What stage is it in now?
 
-> 
+> The Application was built in 2 days in FOSS Hack 3.0. So, it currently supports only the `merge` feature, but, soon I'll be adding other features to it.
 
 ---
