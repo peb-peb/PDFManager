@@ -46,6 +46,8 @@ Features to implement/come in future:
 - Select and Merge Feature
 - Preview before download Feature
 
+<img src="https://github.com/peb-peb/PDFManager/blob/main/assets/MockUp.png" align="center">
+
 The **`OpenPDFManager`** is developed in Python using `flet` (a relatively new GUI library for python). This would serve as a personal project and a guide for any new flet learners. 
 
 ### Installation
